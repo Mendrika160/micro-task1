@@ -1,0 +1,154 @@
+:root{
+    --white: #fff;
+    --black: #070707;
+    --gray: #ccc;
+    --dark: #343a40;
+    --bg-input: rgba(145, 180, 204, 0.1);
+}
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main{
+    margin: 20px;
+}
+.container{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.subtitle{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.input-file-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    cursor: pointer;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    width: 300px;
+    height: 60px;
+    z-index: 1;
+    background-color: var(--bg-input) ;
+}
+
+.input-file-container .input-file{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: -1;
+    opacity: 0;
+}
+
+.input-file-container .input-label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.2s;
+    font-size: 16px;
+    z-index: 2;
+    color: var(--dark);
+
+  }
+  .input-file-container .input-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    height: 30px;
+    color: var(--gray);
+
+  }
+  .input-file-container .input-icon svg{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        color: var(--gray);
+        rotate: 30deg;
+  }
+/* input small */
+.input-small{
+    height: 40px;
+}
+
+/* input samll with shadow */
+
+.input-shadow{
+    box-shadow: 0 0 5px gray;
+    overflow: hidden;
+    background-color: transparent !important;
+}
+.input-shadow > .input-icon{
+    right: 5px !important;
+
+}
+.input-shadow > .input-icon::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 2px;
+    height: 150%;
+    background: var(--gray);
+    transition: transform 0.3s ease;
+}
+.input-shadow > .input-icon svg{
+    height: 30px !important;
+}
+
+  /* input underline */
+ .input-container-underline {
+    border: none;
+    border-bottom: 2px solid var(--dark);
+    outline: none;
+    border-radius: 0%;
+    box-shadow: 0 2px 2px -2px gray;
+    background-color: transparent !important;
+}
+.input-container-underline >.input-label{
+    font-size: 0.8rem;
+    transform: translateY(-20%);
+ 
+}
+.input-container-underline .file-name{
+    color: var(--black);
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+
+
+.input-file:disabled{
+    cursor: not-allowed;
+}
+.input-container-underline.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.file-name,.input-label{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 230px ;
+}
