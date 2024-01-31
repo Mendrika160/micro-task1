@@ -21,9 +21,11 @@ body{
     flex-wrap: wrap;
 }
 .input-container{
+    flex-basis: 40%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
 }
 .subtitle{
     font-size: 1.5rem;
@@ -33,6 +35,7 @@ body{
 
 .input-file-container{
     position: relative;
+    container: input-file-container / inline-size;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +43,7 @@ body{
     cursor: pointer;
     border: 1px solid var(--gray);
     border-radius: 5px;
-    width: 300px;
+    width: 100%;
     height: 60px;
     z-index: 1;
     background-color: var(--bg-input) ;
@@ -69,6 +72,15 @@ body{
     color: var(--dark);
 
   }
+  .input-file-container .file-name{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: var(--black);
+        position: absolute;
+        top: 50%;
+        left: 10px;
+}
   .input-file-container .input-icon {
     position: absolute;
     top: 50%;
@@ -130,12 +142,7 @@ body{
     transform: translateY(-20%);
  
 }
-.input-container-underline .file-name{
-    color: var(--black);
-    position: absolute;
-    top: 50%;
-    left: 10px;
-}
+
 
 
 .input-file:disabled{
@@ -146,9 +153,3 @@ body{
     cursor: not-allowed;
 }
 
-.file-name,.input-label{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 230px ;
-}
